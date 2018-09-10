@@ -5,9 +5,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -17,10 +15,7 @@ import javafx.scene.shape.Shape;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -33,8 +28,8 @@ public class Controller implements Initializable {
 	private static final String discColor2 = "#4CAA88";
 
 
-	private static String PLAYER_ONE  = "Player One";
-	private static String PLAYER_TWO = "Player Two";
+	private  String PLAYER_ONE  = "Player One";
+	private  String PLAYER_TWO = "Player Two";
 
 	private boolean isPlayerOneTurn =  true;
 
@@ -49,9 +44,21 @@ public class Controller implements Initializable {
 	@FXML
 	public Label playerNameLabel;
 
+	@FXML
+	public TextField playerOneTextField, playerTwoTextField;
+
+	@FXML
+	public Button setNamesButton;
+
 	private boolean isAllowedToInsert = true;       //flag to avoid same color of disc being inserted
 
 	public void createPlayground(){
+
+		setNamesButton.setOnAction(event -> {
+			PLAYER_ONE = playerOneTextField.getText();
+			PLAYER_TWO = playerTwoTextField.getText();
+			playerNameLabel.setText(PLAYER_ONE);
+		});
 
 		Shape rectangleWithHoles = createGameStructuralGrid();
 		rootGridPane.add(rectangleWithHoles,0,1);
