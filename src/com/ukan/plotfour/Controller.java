@@ -11,6 +11,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -39,8 +41,13 @@ public class Controller implements Initializable {
 	public void createPlayground(){
 
 		Shape rectangleWithHoles = createGameStructuralGrid();
-
 		rootGridPane.add(rectangleWithHoles,0,1);
+
+		List<Rectangle> rectangleList = createClickableColumns();
+
+		for (Rectangle rectangle: rectangleList) {
+			rootGridPane.add(rectangle, 0, 1);
+		}
 	}
 
 	private Shape createGameStructuralGrid(){
@@ -64,6 +71,49 @@ public class Controller implements Initializable {
 		rectangleWithHoles.setFill(Color.WHITE);
 
 		return rectangleWithHoles;
+	}
+
+	private List<Rectangle> createClickableColumns() {
+
+		List<Rectangle> rectangleList = new ArrayList<>();
+
+		for (int col = 0; col < COLUMNS; col++) {
+
+			Rectangle rectangle = new Rectangle(CIRCLE_DIAMETER, (ROWS + 1) * CIRCLE_DIAMETER);
+			rectangle.setFill(Color.TRANSPARENT);
+			rectangle.setTranslateX(col * (CIRCLE_DIAMETER + 5) + CIRCLE_DIAMETER / 4);
+
+			rectangle.setOnMouseEntered(event -> rectangle.setFill(Color.valueOf("#eeeeee26")));
+			rectangle.setOnMouseExited(event ->  rectangle.setFill(Color.TRANSPARENT));
+
+			final int column = col;
+			rectangle.setOnMouseClicked(event -> {
+				insertDisc(new Disc(isPlayerOneTurn), column);
+			});
+
+			rectangleList.add(rectangle);
+		}
+
+		return rectangleList;
+	}
+
+	private static void insertDisc(Disc disc, int column) {
+
+	}
+
+	private static class Disc extends Circle {
+
+		private final boolean isPlayerOneMove;
+
+		public Disc(boolean isPlayerOneMove) {
+
+			this.isPlayerOneMove = isPlayerOneMove;
+			setRadius(CIRCLE_DIAMETER / 2);
+			setFill(isPlayerOneMove? Color.valueOf(discColor1): Color.valueOf(discColor2));
+			setCenterX(CIRCLE_DIAMETER / 2);
+			setCenterY(CIRCLE_DIAMETER / 2);
+		}
+
 	}
 
 	@Override
