@@ -23,6 +23,7 @@ public class Main extends Application {
         GridPane rootGridPane = loader.load();
 
         controller = loader.getController();
+        controller.createPlayground();
 
         MenuBar menuBar = createMenu();
         // for menu bar to occupy the full width
