@@ -49,6 +49,8 @@ public class Controller implements Initializable {
 	@FXML
 	public Label playerNameLabel;
 
+	private boolean isAllowedToInsert = true;       //flag to avoid same color of disc being inserted
+
 	public void createPlayground(){
 
 		Shape rectangleWithHoles = createGameStructuralGrid();
@@ -71,6 +73,7 @@ public class Controller implements Initializable {
 				circle.setRadius(CIRCLE_DIAMETER / 2);
 				circle.setCenterX(CIRCLE_DIAMETER / 2);
 				circle.setCenterY(CIRCLE_DIAMETER / 2);
+				circle.setSmooth(true);
 
 				circle.setTranslateX(col * (CIRCLE_DIAMETER + 5) + CIRCLE_DIAMETER / 4);
 				circle.setTranslateY(row * (CIRCLE_DIAMETER + 5) + CIRCLE_DIAMETER / 4);
@@ -99,7 +102,10 @@ public class Controller implements Initializable {
 
 			final int column = col;
 			rectangle.setOnMouseClicked(event -> {
-				insertDisc(new Disc(isPlayerOneTurn), column);
+				if (isAllowedToInsert) {
+					isAllowedToInsert = false;  //when the disc is being dropped then no more disc will be added
+					insertDisc(new Disc(isPlayerOneTurn), column);
+				}
 			});
 
 			rectangleList.add(rectangle);
@@ -131,6 +137,7 @@ public class Controller implements Initializable {
 		translateTransition.setToY(row * (CIRCLE_DIAMETER + 5) + CIRCLE_DIAMETER / 4);
 		translateTransition.setOnFinished(event -> {
 
+			isAllowedToInsert = true;   //finally when disc is dropped, allow the next player to insert disc
 			if(gameEnded(currentRow, column)) {
 				gameOver();
 				return;
@@ -232,7 +239,7 @@ public class Controller implements Initializable {
 		});
 	}
 
-	private void resetGame() {
+	public void resetGame() {
 
 		insertedDiscsPane.getChildren().clear();  // remove all the inserted disc from the pane
 
