@@ -46,10 +46,10 @@ public class Main extends Application {
 	    Menu fileMenu = new Menu("File");
 
 	    MenuItem newGame = new MenuItem("New game");
-	    newGame.setOnAction(event -> resetGame());
+	    newGame.setOnAction(event -> controller.resetGame());
 
 	    MenuItem resetGame = new MenuItem("Reset game");
-	    resetGame.setOnAction(event -> resetGame());
+	    resetGame.setOnAction(event -> controller.resetGame());
 
 	    SeparatorMenuItem separatorMenuItem = new SeparatorMenuItem();
 	    MenuItem exitgame = new MenuItem("Exit Game");
@@ -96,11 +96,6 @@ public class Main extends Application {
 		Platform.exit();
 		System.exit(0);
 	}
-
-	private void resetGame() {
-    	//TODO
-	}
-
 
 	public static void main(String[] args) {
         launch(args);
