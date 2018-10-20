@@ -15,18 +15,18 @@ own discs.
 
 ## GamePlay Screenshots:
 
-![Screenshot-1](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/1.PNG)
+![Screenshot-1](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g1.PNG)
 
-![Screenshot-2](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/2.PNG)
+![Screenshot-2](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g2.PNG)
 
-![Screenshot-3](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/3.PNG)
+![Screenshot-3](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g3.PNG)
 
-![Screenshot-4](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/4.PNG)
+![Screenshot-4](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g4.PNG)
 
-![Screenshot-5](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/5.PNG)
+![Screenshot-5](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g5.PNG)
 
-![Screenshot-6](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/6.PNG)
+![Screenshot-6](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g6.PNG)
 
-![Screenshot-7](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/7.PNG)
+![Screenshot-7](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g7.PNG)
 
-![Screenshot-8](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/8.PNG)
+![Screenshot-8](https://github.com/kmranrg/PlotFour/blob/master/out/artifacts/PlotFour_jar/Screenshots/g8.PNG)
